@@ -1,6 +1,6 @@
 arquivoTemporario = "arquivoTemporario.txt"
 
-# Função para ler e reduzir (agregar os valores do arquivo temporário)
+# Função para organizar
 def sort():
     with open(arquivoTemporario, 'r') as arquivo:
         conteudo = arquivo.read().splitlines()  # Lê o arquivo linha por linha
