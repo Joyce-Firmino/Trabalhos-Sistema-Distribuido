@@ -1,14 +1,11 @@
-
 import threading
 
-
 final = "final.txt"
-
 lock = threading.Lock()  # Lock para evitar problemas de concorrência
 
-def reduce(palavra, valor):
+# Função reduce para escrever as linhas que deram match no arquivo final
+def reduce(linha):
     with lock:
-        #print(f"Thread concorrendo para escrever: {palavra}")  # Mensagem de concorrência
         with open(final, "a") as arquivoFinal:
-            arquivoFinal.write(f"{palavra} {len(valor)}\n") 
-    print(f"{palavra} {len(valor)}")
+            arquivoFinal.write(linha + "\n")  # Escreve a linha correspondente no arquivo final
+    print(linha)  # Imprime a linha correspondente
